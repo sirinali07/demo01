@@ -1,0 +1,19 @@
+description: GitHub Copilot Evaluation
+
+prompts:
+  - file://prompts.txt
+
+providers:
+  - id: github:copilot
+
+defaultTest:
+  options:
+    threshold: 0.8
+
+tests:
+  - assert:
+      - type: contains
+        value: "def reverse_string"
+
+      - type: contains
+        value: "[::-1]"
